@@ -1,4 +1,5 @@
 node_modules
+app/*.html
 app/bower_components
 app/.tmp
 dist
