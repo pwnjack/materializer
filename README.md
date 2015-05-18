@@ -1,58 +1,62 @@
-# Jader
+# Sparkle
 Frontend coding environment
 
-## Features
-- [Bower](http://bower.io)
-Used to install your project's dependencies.
+## Getting Started
+To use Sparkle you need all the following softwares to be installed in your computer.
 
-- [Gulp](http://gulpjs.com)
-Streaming build system.
+ - Node
+ - Npm
+ - Gulp
+ - Bower
+ - Git
 
-- [Less](http://lesscss.org/)
-Less CSS pre-processor.
+To get started clone this repo on your local machine:
 
-- [Jade](http://jade-lang.com)
-Jade markup templating language used as HTML pre-processor.
+		git clone https://github.com/pwnjack/sparkle.git
 
-- [Autoprefixer](https://github.com/postcss/autoprefixer)
-Automagically prefix your CSS code for optimal cross-browser consistency.
+Move inside the newly created "sparkle" folder and install the default dev-dependencies:
 
-- [BrowserSync](http://www.browsersync.io)
-LiveReload-like server to preview your code changes in the browser on the fly, supporting multi-device page synchronization.
-
-- [Imagemin](https://github.com/imagemin/imagemin)
-Image web optimization.
-
-## Setup
-Install Jader dependencies
-    
     npm install
-    
-Install default assets (Modernizr, jQuery, Bootstrap)
-    
-    bower install
-    
-Install your project assets
-    
-    bower install --save package-name
-    
-## Develop
-Run the live-preview webserver and start to work on your code
 
-    gulp
-    
-This will wire up all your Bower assets to your markup an run the local webserver.
+Then install your project's default dependencies (Modernizr, jQuery, MaterializeCSS)
 
-When you are done coding and ready to build up your project run this command:
+ 		bower install
 
-    gulp build
-    
-You can now find the production-ready code inside the `dist` folder.
+To install more dependencies in your project do it via Bower with the --save option, like so:
 
-If the server stops for any reason, use this command to start it again:
+ 		bower install --save font-awesome
 
-    gulp serve
-    
-To delete the compiled code and clean the project folder run:
 
-    gulp clean
+## Usage
+Once you have defined all your assets you can start to work on your project, open the project folder in your terminal and run:
+
+		gulp
+
+This will open up your favorite browser on the project's index page, and while you work on the code it will refresh in real-time the browser's page to reflect your code's changes (css, js, jade).
+
+To work smoothly Sparkle let you build you project using some preprocessors:
+
+- Jade for HTML
+- Sass for CSS
+
+Sparkle have more nice features:
+
+- Images web-optimization
+- Css autoprefixer
+- Code minification for production
+- Bower dependencies injection
+- Preview local web-server with BrowserSync
+- Browser real-time updates on code changes
+
+## Helpers
+If you want to install an asset later on, stop the server in your terminal, install the asset via Bower then inject it's reference in your markup:
+
+		gulp inject
+
+Then start the server again
+
+		gulp serve
+
+And start to work again on your code.
+
+If you want to install an asset not "bower-ready" you can do it by adding it's full path to the "config.json" file.

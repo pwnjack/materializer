@@ -1,9 +1,5 @@
 {
   "vendor_files": {
-    "js": [
-    ],
-    "css": [
-    ],
     "font": [
       "app/bower_components/materialize/dist/font/**/*.*"
     ],

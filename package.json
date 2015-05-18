@@ -1,6 +1,6 @@
 {
   "name": "Sparkle",
-  "version": "0.0.3",
+  "version": "0.0.1",
   "description": "Frontend coding environment",
   "main": "gulpfile.js",
   "author": "@pwnjack",
@@ -31,7 +31,6 @@
     "gulp-uglify": "^1.0.1",
     "gulp-useref": "^1.0.2",
     "jshint-stylish": "^1.0.0",
-    "main-bower-files": "^2.1.0",
-    "merge-stream": "^0.1.7"
+    "main-bower-files": "^2.1.0"
   }
 }

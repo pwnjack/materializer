@@ -16,10 +16,6 @@ gulp.task('styles', function() {
   .pipe(gulp.dest('app/.tmp'))
 	.pipe(reload({stream:true}));
 });
- 
-gulp.task('sass:watch', function () {
-  gulp.watch('./sass/**/*.scss', ['sass']);
-});
 
 gulp.task('scripts', function() {
 	return gulp.src('app/scripts/*.js')
