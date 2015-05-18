@@ -48,6 +48,12 @@ Sparkle have more nice features:
 - Preview local web-server with BrowserSync
 - Browser real-time updates on code changes
 
+When your project is ready for production build it
+
+		gulp build
+
+Your project's optimized version will be stored in the newly created "dist" folder.
+
 ## Helpers
 If you want to install an asset later on, stop the server in your terminal, install the asset via Bower then inject it's reference in your markup:
 
@@ -59,4 +65,11 @@ Then start the server again
 
 And start to work again on your code.
 
-If you want to install an asset not "bower-ready" you can do it by adding it's full path to the "config.json" file.
+If you want to install an asset not available on Bower you can do it by adding it's code in to the following files:
+
+- Javascript into "app/scripts/plugins.js"
+- CSS into "app/styles/includes/_plugins.scss"
+- For images and Fonts just add their full path to the "config.json" file
+
+### Feedback
+Your feedback is much appreciated.
