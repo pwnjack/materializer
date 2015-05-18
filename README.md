@@ -1,8 +1,10 @@
 # Sparkle
 Frontend coding environment
 
+Building static websites and interfaces is sometimes a tedious task if we use just plain HTML and CSS, and as we know those languages are not very scalable and maintainable, so here's a frontend coding environment that comes in handy. With Sparkle you can take the advantages of more versatile languages like Sass and Jade to make static website development efficient and as painless as possible.
+
 ## Getting Started
-To use Sparkle you need all the following softwares to be installed in your computer.
+To use Sparkle you need all the following softwares to be installed on your computer.
 
  - Node
  - Npm
@@ -18,7 +20,7 @@ Move inside the newly created "sparkle" folder and install the default dev-depen
 
     npm install
 
-Then install your project's default dependencies (Modernizr, jQuery, MaterializeCSS)
+Then install your project's default dependencies (Modernizr, jQuery, MaterializeCSS):
 
  		bower install
 
@@ -28,11 +30,11 @@ To install more dependencies in your project do it via Bower with the --save opt
 
 
 ## Usage
-Once you have defined all your assets you can start to work on your project, open the project folder in your terminal and run:
+Once you have defined all your assets you can start to work on your project, run:
 
 		gulp
 
-This will open up your favorite browser on the project's index page, and while you work on the code it will refresh in real-time the browser's page to reflect your code's changes (css, js, jade).
+This will open up your favorite browser on the project's index page, and while you work on the code it will refresh  the page in real-time to reflect your code's changes (css, js, jade).
 
 To work smoothly Sparkle let you build you project using some preprocessors:
 
@@ -42,34 +44,33 @@ To work smoothly Sparkle let you build you project using some preprocessors:
 Sparkle have more nice features:
 
 - Images web-optimization
-- Css autoprefixer
-- Code minification for production
+- CSS autoprefixer
+- Code minimization for production
 - Bower dependencies injection
-- Preview local web-server with BrowserSync
-- Browser real-time updates on code changes
+- Local preview web-server with BrowserSync
 
-When your project is ready for production build it
+When your project is ready for production, build it:
 
 		gulp build
 
-Your project's optimized version will be stored in the newly created "dist" folder.
+Your project's optimized version will be stored in the freshly created "dist" folder.
 
 ## Helpers
-If you want to install an asset later on, stop the server in your terminal, install the asset via Bower then inject it's reference in your markup:
+If you want to install an asset later on, stop the server in your terminal (CTRL+C), install the asset via Bower then inject it's reference in your markup:
 
 		gulp inject
 
-Then start the server again
+Then start the server again:
 
 		gulp serve
 
-And start to work again on your code.
+And you can get back to work on your code.
 
-If you want to install an asset not available on Bower you can do it by adding it's code in to the following files:
+If you want to install an asset that is not available on Bower you can do it by copy-pasting it's code in to the following files (depending on code language):
 
 - Javascript into "app/scripts/plugins.js"
 - CSS into "app/styles/includes/_plugins.scss"
-- For images and Fonts just add their full path to the "config.json" file
+- For images and fonts you need to add their full path reference into "config.json"
 
 ### Feedback
-Your feedback is much appreciated.
+Thanks for reading, your feedback is much appreciated.
