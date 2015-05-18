@@ -1,24 +1,20 @@
 'use strict';
 
 var gulp = require('gulp'),
-	$ = require('gulp-load-plugins')(),
-	mainBowerFiles = require('main-bower-files'),
-	del = require('del'),
-	browserSync = require('browser-sync'),
-	reload = browserSync.reload;
+		$ = require('gulp-load-plugins')(),
+		mainBowerFiles = require('main-bower-files'),
+		del = require('del'),
+		browserSync = require('browser-sync'),
+		reload = browserSync.reload;
+
+var config = require('./config.json');
 
 gulp.task('styles', function() {
 	return gulp.src('app/styles/main.scss')
-    .pipe($.sass().on('error', $.sass.logError))
-    .pipe($.autoprefixer('last 5 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-    .pipe(gulp.dest('app/.tmp'))
+  .pipe($.sass().on('error', $.sass.logError))
+  .pipe($.autoprefixer('last 5 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+  .pipe(gulp.dest('app/.tmp'))
 	.pipe(reload({stream:true}));
-});
-
-gulp.task('sass', function () {
-  gulp.src('./sass/**/*.scss')
-    .pipe($.sass())
-    .pipe(gulp.dest('./css'));
 });
  
 gulp.task('sass:watch', function () {
@@ -43,7 +39,9 @@ gulp.task('clear_cache', function (done) {
 });
 
 gulp.task('images', ['clear_cache'], function() {
-	return gulp.src('app/images/*')
+	gulp.src(config.vendor_files.images)
+	.pipe(gulp.dest('dist/images'))
+	gulp.src('app/images/*')
 	.pipe($.cache($.imagemin({
         optimizationLevel: 3,
         progressive: true,
@@ -53,7 +51,9 @@ gulp.task('images', ['clear_cache'], function() {
 });
 
 gulp.task('font', function() {
-	return gulp.src(['app/**/font/*.eot', 'app/**/font/*.woff', 'app/**/font/*.svg', 'app/**/font/*.ttf'])
+	return gulp.src(config.vendor_files.font)
+	.pipe(gulp.dest('dist/font'))
+	return gulp.src(['app/**/font/**/*.eot', 'app/**/font/**/*.woff', 'app/**/font/**/*.svg', 'app/**/font/**/*.ttf'])
 	.pipe($.flatten())
 	.pipe(gulp.dest('dist/font'))
 });
@@ -64,10 +64,10 @@ gulp.task('extra', function() {
 });
 
 gulp.task('inject', function () {
-    return gulp.src(['app/views/master.jade'])
-    .pipe($.inject(gulp.src(mainBowerFiles(), {read: false, cwd: 'app'}), {name: 'bower', relative: false}))
-    .pipe($.inject(gulp.src('bower_components/modernizr/modernizr.js', {read: false, cwd: 'app'}), {name: 'modernizr', relative: false}))
-    .pipe(gulp.dest('app/views'));
+	return gulp.src(['app/views/master.jade'])
+  .pipe($.inject(gulp.src(mainBowerFiles(), {read: false, cwd: 'app'}), {name: 'bower', relative: false}))
+  .pipe($.inject(gulp.src('bower_components/modernizr/modernizr.js', {read: false, cwd: 'app'}), {name: 'modernizr', relative: false}))
+  .pipe(gulp.dest('app/views'));
 });
 
 gulp.task('jade', function() {
@@ -91,18 +91,18 @@ gulp.task('clean', function(cb) {
 
 gulp.task('deploy', function () {
 	var gulpif = require('gulp-if');
-    var assets = $.useref.assets();
-    return gulp.src('app/*.html')
-    .pipe(assets)
-    .pipe(gulpif('*.js', $.uglify()))
-    .pipe(gulpif('*.css', $.csso()))
-    .pipe(assets.restore())
-    .pipe($.useref())
-    .pipe(gulp.dest('dist'));
+  var assets = $.useref.assets();
+  return gulp.src('app/*.html')
+  .pipe(assets)
+  .pipe(gulpif('*.js', $.uglify()))
+  .pipe(gulpif('*.css', $.csso()))
+  .pipe(assets.restore())
+  .pipe($.useref())
+  .pipe(gulp.dest('dist'));
 });
 
 gulp.task('build', ['start'], function() {
-    gulp.start('deploy', 'images', 'font', 'extra');
+  gulp.start('deploy', 'images', 'font', 'extra');
 });
 
 gulp.task('watch', function() {
