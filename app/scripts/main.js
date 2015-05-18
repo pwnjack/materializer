@@ -1,0 +1,1 @@
+console.log('Sparkle is ready');

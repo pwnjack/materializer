@@ -1,0 +1,13 @@
+@import 'includes/variables';
+
+// Extra small screen / phone
+@media only screen and (max-width: $small-screen) {}
+
+// Small screen / tablet
+@media #{$small-and-down} {}
+
+// Medium screen / desktop
+@media #{$medium-and-down} {}
+
+// Large screen / wide desktop
+@media #{$large-and-up} {}
