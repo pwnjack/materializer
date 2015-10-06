@@ -1,1 +1,1 @@
-console.log('Sparkle is ready');
+console.log('Materializer is ready');

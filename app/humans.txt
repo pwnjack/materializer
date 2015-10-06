@@ -7,7 +7,7 @@
 
 # THANKS
 
-    Sparkle -- Project -- http://github.com/pwnjack/sparkle
+    Materializer -- Project -- http://github.com/pwnjack/materializer
 
 # TECHNOLOGY COLOPHON
 

@@ -1,12 +1,12 @@
-# Sparkle
+# Materializer
 Frontend coding environment
 
-Building static websites and interfaces is sometimes a tedious task if we use just plain HTML and CSS, and as we know those languages are not very scalable and maintainable, so here's a frontend coding environment that comes in handy. With Sparkle you can take the advantages of more versatile languages like Sass and Jade to make static website development efficient and as painless as possible.
+Building static websites and interfaces is sometimes a tedious task if we use just plain HTML and CSS, and as we know those languages are not very scalable and maintainable, so here's a frontend coding environment that comes in handy. With Materializer you can take the advantages of more versatile languages like Sass and Jade to make static website development efficient and as painless as possible.
 
-Sparkle also features a local web-server and some neat features, read on for more information.
+Materializer also features a local web-server and some neat features, read on for more information.
 
 ## Getting Started
-To use Sparkle you need all the following softwares to be installed on your computer.
+To use Materializer you need all the following softwares to be installed on your computer.
 
  - Node
  - Npm
@@ -16,11 +16,11 @@ To use Sparkle you need all the following softwares to be installed on your comp
 
 To get started clone this repo on your local machine:
 
-	git clone https://github.com/pwnjack/sparkle.git
+	git clone https://github.com/pwnjack/materializer.git
 
-Move inside the newly created "sparkle" folder and install the default dev-dependencies:
+Move inside the newly created "materializer" folder and install the default dev-dependencies:
 
-	cd sparkle
+	cd materializer
 
 	npm install
 
@@ -40,12 +40,12 @@ Once you have defined all your assets you can start to work on your project, run
 
 This will open up your favorite browser on the project's index page, and while you work on the code it will refresh  the page in real-time to reflect your code's changes (css, js, jade).
 
-To work smoothly Sparkle let you build you project using some preprocessors:
+To work smoothly Materializer let you build you project using some preprocessors:
 
 - Jade for HTML
 - Sass for CSS
 
-Sparkle have more nice features:
+Materializer have more nice features:
 
 - Images web-optimization
 - CSS autoprefixer
