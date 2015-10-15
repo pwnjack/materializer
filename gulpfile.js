@@ -102,7 +102,7 @@ gulp.task('build', ['start'], function() {
 });
 
 gulp.task('watch', function() {
-	gulp.watch('app/**/*.jade', ['jade']);
+	gulp.watch('app/views/**/*.jade', ['jade']);
 	gulp.watch('app/styles/**/*.scss', ['styles']);
 	gulp.watch('app/scripts/**/*.js', ['scripts']);
 });
